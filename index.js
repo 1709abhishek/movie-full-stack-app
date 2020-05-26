@@ -4,9 +4,11 @@ const port = 8000;
 const mongoose = require('mongoose');
 const db = require('./config/mongoose');
 const bodyParser = require('body-parser');
+var cors = require('cors');
 
 // body parser for req.body.params
 
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 

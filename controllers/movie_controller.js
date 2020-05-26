@@ -7,6 +7,7 @@ module.exports.create = async function (req, res) {
 
         var new_movie = await new Movie(req.body);
         var curr_genre = await Genre.findOne({ name: req.params.genre });
+        console.log(req.params);
         new_movie.genre = curr_genre.id;
         let movie = await new_movie.save();
 
@@ -96,9 +97,12 @@ module.exports.showByGenre = async function (req, res) {
     try {
         let genre = await Genre.findOne({ name: req.params.genre });
 
+        console.log(genre);
+        let movies = await genre.populate({ path: 'movies' }).execPopulate();
+        console.log(movies);
         return res.json(200, {
             message: "movies listed successfully",
-            movies: genre.movies
+            movies: movies
         });
     } catch (err) {
         console.log('********', err);
