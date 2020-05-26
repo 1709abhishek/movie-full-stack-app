@@ -1,4 +1,4 @@
-![](project.gif)
+![](MoviesApp.gif)
 
 # Movie-full-stack-app
 A full stack web application where user can create genre, movies update/delete movies,genre showall genre/movies with category as genre.
