@@ -71,13 +71,3 @@ A full stack web application where user can create genre, movies update/delete m
                  ├── Movie.js    
     ├── .gitignore
 
-# testing
----- used mocha as a server and chai for assertion library
-3 tests :- 
-1. to check for /register-patients
-2. to check for /patients/:id/create-report
-3. to check for /patients/:id/all-reports
-all three are authenticated use token to authorise.
-obtain the token by registering the doctor in test DB itself and then login and get the token
-paste it in registerPatient.js file
------- clearing the test database beforehand everytime tests are ran-------
